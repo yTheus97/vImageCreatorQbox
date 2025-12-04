@@ -1,15 +1,14 @@
 fx_version 'cerulean'
-games {'gta5'}
+game 'gta5'
+
+shared_script 'config.lua'
 
 server_scripts {
-	'@mysql-async/lib/MySQL.lua',	
-	'config.lua',
-	'server/server.lua'
+	'@oxmysql/lib/MySQL.lua', -- https://github.com/CommunityOx/oxmysql
+	'server/server.lua',
+    'server/downloader.js'
 }
 
-client_scripts {		
-	'config.lua',
-	'client/client.lua'
-}
+client_script 'client/client.lua'
 
-dependency 'screenshot-basic'
+dependency 'screencapture' -- https://github.com/itschip/screencapture
